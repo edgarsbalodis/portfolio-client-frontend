@@ -1,0 +1,62 @@
+.sectionFooter {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*height: 15rem;*/
+
+    padding-top: 1rem;
+    background: #121212;
+}
+
+.sectionFooterInner {
+    display: flex;
+    height: 15rem;
+}
+
+.abstractLine {
+    height: 2px;
+    background: #262626;
+}
+
+.navigation {
+    padding: 7.5rem 10rem;
+    display: flex;
+    align-items: center;
+    /*height: 15rem;*/
+}
+
+.navigationCopyRight {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navigationLinks {
+    /*display: flex;*/
+}
+
+.links {
+    display: flex;
+    list-style: none;
+}
+
+.link + .link {
+    margin-left: 1rem;
+}
+
+.copyRightText {
+
+}
+
+.navigationLeft, .navigationRight {
+    width: 20%;
+}
+
+.navigationCenter {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

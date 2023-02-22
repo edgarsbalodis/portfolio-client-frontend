@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 3rem 11rem;
+    position: relative;
+}
+
+.logoBlock {
+    display: flex;
+    align-items: center;
+}
+
+.logoBlock__logo {
+    margin-right: 2rem;
+}
+
+.logoBlock__text {
+    color: var(--white-color);
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: -0.055em;
+}
+
+.logoBlock__firstName {
+    color: var(--primary-accent-color);
+}
+
+/* --- NAVBAR --- */
+.navigationBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigationBlock__themeBlock {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navigationBlock__themeBlock_icon {
+    display: inline;
+    color: var(--white-color);
+    padding: 0.5rem;
+    background: var(--tertiary-color);
+    border: 1px solid var(--tertiary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navigationBlock__themeBlock_icon:hover {
+    background: var(--tertiary-color);
+    border: 1px solid var(--primary-accent-color);
+}
+
+.navigationBlock__themeBlock_iconActive {
+    display: inline;
+    color: var(--white-color);
+    padding: 0.5rem;
+    background: var(--tertiary-color);
+    border: 1px solid var(--primary-accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navigationBlock__linkList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigationBlock__linkList_link:link,
+.navigationBlock__linkList_link:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: normal;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.navigationBlock__linkList_link:hover,
+.navigationBlock__linkList_link:active {
+    color: var(--primary-accent-color);
+}

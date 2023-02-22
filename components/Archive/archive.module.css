@@ -1,0 +1,39 @@
+.archives {
+    display: grid;
+}
+
+.archives > :nth-child(odd) {
+    justify-self: right;
+    margin: 0;
+    padding: 0;
+}
+
+.archives > :nth-child(even) {
+    justify-self: left;
+    margin-top: -15rem;
+}
+
+.archiveImageBox {
+    border: 3rem solid #C3FF93;
+    border-radius: 2.2rem;
+    background: #c3ff93;
+}
+
+.archiveImage {
+    border-radius: 2.2rem;
+}
+
+.archiveTitleBox {
+    display: flex;
+    align-items: center;
+}
+
+.archiveTitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    color: #ffffff;
+
+    margin-left: 3rem;
+    padding-top: 1rem;
+}

@@ -1,0 +1,93 @@
+.sectionHero {
+}
+
+/* FIRST ELEMENT */
+.heroBlock {
+    background-image: var(--hero-background);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.animationBlock {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 18rem 0 9rem 0;
+}
+
+.animationBlock__image {
+    z-index: 1;
+    position: absolute;
+    right: 50%;
+}
+
+.animationBlock__text {
+    background: radial-gradient(50% 50% at 50% 50%, var(--primary-accent-color) 0%, rgba(195, 255, 147, 0.933666) 56.77%, rgba(195, 255, 147, 0.927083) 75%, rgba(195, 255, 147, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 578px;
+    width: 578px;
+}
+
+.ctaBlock {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-bottom: 9rem;
+    margin-bottom: 5rem;
+    margin-right: 10rem;
+}
+
+.textBlock {
+    display: flex;
+    align-items: start;
+    padding-bottom: 40rem;
+    margin-left: 10rem;
+}
+
+/* SECOND ELEMENT */
+.abstractBlock {
+    background: url('../../../public/3d-abstract-iridescent-wavy-background-vibrant-liquid-reflection-surface-neon-holographic-fluid-distortion 1.svg');
+    height: 80vh;
+    background-size: cover;
+}
+
+/* THIRD ELEMENT */
+
+.descriptionBlock {
+    display: flex;
+    align-items: center;
+    margin-top: 32rem;
+    flex-direction: column;
+    padding-bottom: 10rem;
+}
+
+.descriptionBlock__text {
+    text-align: center;
+    margin-bottom: -20%;
+    z-index: 1;
+}
+
+.artBlock {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.artBlock__circle {
+    position: absolute;
+    height: 60rem;
+    width: 60rem;
+    border-radius: 50%;
+    border: 1px solid var(--primary-accent-color);
+    z-index: 1;
+}
