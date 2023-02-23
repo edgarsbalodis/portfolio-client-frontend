@@ -1,17 +1,29 @@
+import type {Route} from 'next';
+
 interface Routes {
-    HOME: string;
-    WORK: string;
-    CONTACT: string;
-    ABOUT: string;
-    BLOG: string;
-    BLOG_POST: (slug: string) => string;
+    name: string;
+    path: Route;
 }
 
-export const routes: Routes = {
-    HOME: '/',
-    WORK: '/#work',
-    CONTACT: '/#contact',
-    ABOUT: '/about',
-    BLOG: '/blog',
-    BLOG_POST: (slug: string) => `/blog/${slug}`,
-};
+export const routes: Routes[] = [
+    {
+        name: 'Home',
+        path: '/',
+    },
+    {
+        name: 'Work',
+        path: '/#work',
+    },
+    {
+        name: 'Contact',
+        path: '/#contact',
+    },
+    {
+        name: 'About',
+        path: '/about',
+    },
+    {
+        name: 'Blog',
+        path: '/blog',
+    }
+];

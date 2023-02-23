@@ -6,15 +6,18 @@ import {FiMoon, FiSun} from "react-icons/fi";
 export default function Navbar() {
     return (
         <nav className={styles.navigationBlock}>
-            <div className={styles.navigationBlock__themeBlock}>
-                <FiMoon className={styles.navigationBlock__themeBlock_iconActive} size={22}/>
-                <FiSun className={styles.navigationBlock__themeBlock_icon} size={22}/>
+            <div className={styles.themeBlock}>
+                <FiMoon className={styles.themeBlock__icon_active} size={22}/>
+                <FiSun className={styles.themeBlock__icon} size={22}/>
             </div>
-            <ul className={styles.navigationBlock__linkList}>
-                <li><Link className={styles.navigationBlock__linkList_link} href={routes.WORK}>Works</Link></li>
-                <li><Link className={styles.navigationBlock__linkList_link} href={routes.ABOUT}>About</Link></li>
-                <li><Link className={styles.navigationBlock__linkList_link} href={routes.CONTACT}>Contacts</Link></li>
-                <li><Link className={styles.navigationBlock__linkList_link} href={routes.BLOG}>Blog</Link></li>
+            <ul className={styles.linkListBlock}>
+                {
+                    routes.map(({name, path}, idx) => (
+                        <li key={idx}>
+                            <Link className={styles.linkListBlock__link} href={path}>{name}</Link>
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
     )

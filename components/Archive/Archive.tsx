@@ -9,7 +9,7 @@ export default function Archive() {
             <div className={styles.archives}>
                 {/* There will be for loop for each Project */}
                 {/* Project 1 */}
-                {/* split to component -> ArchiveItem */}
+                {/* TODO: split to component -> ArchiveItem */}
                 <div className={styles.archive}>
                     <div className={styles.archiveImageBox}>
                         <Image className={styles.archiveImage} src="archive/forest_project.svg" alt="forest" width={405}
