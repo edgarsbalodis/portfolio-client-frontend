@@ -91,3 +91,7 @@
     border: 1px solid var(--primary-accent-color);
     z-index: 1;
 }
+
+.artBlock__image {
+    transition: all 0.3s;
+}

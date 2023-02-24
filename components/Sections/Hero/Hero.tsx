@@ -1,5 +1,7 @@
 import styles from './hero.module.css';
 import Image from "next/image";
+import HeadingText from "@/components/Heading/HeadingText";
+import ArtBlock from "@/components/Sections/Hero/ArtBlock/ArtBlock";
 
 export default function Hero() {
     return (
@@ -17,23 +19,18 @@ export default function Hero() {
                     <button className="primaryButton">Contact</button>
                 </div>
                 <div className={styles.textBlock}>
-                    <h1 className="headingPrimary">I love to create <br/>something<br/>simple and<br/>clear</h1>
+                    <HeadingText
+                        variant={'h1'}
+                        styleVariant={'headingPrimary'}
+                    >
+                        I love to create <br/>something<br/>simple and<br/>clear
+                    </HeadingText>
                 </div>
             </div>
 
             <div className={styles.abstractBlock}/>
 
-            <div className={styles.descriptionBlock}>
-                <h1 className={`${styles.descriptionBlock__text} headingPrimary`}>Build and develop<br/>
-                    projects from concept<br/>
-                    until the publish
-                </h1>
-                <div className={styles.artBlock}>
-                    <div className={styles.artBlock__circle}/>
-                    <Image className={styles.artBlock__image} src="/black_flower.svg" width={1250} height={1250}
-                           alt="flower"/>
-                </div>
-            </div>
+            <ArtBlock />
 
         </section>
     )

@@ -1,53 +1,29 @@
 import styles from "./archive.module.css"
-import Image from "next/image";
 import '../../app/globals.css'
-import {HiArrowRight} from "react-icons/hi";
+import {archiveData} from "@/datas/archive";
+import ArchiveItem from "@/components/Archive/ArchiveItem/ArchiveItem";
+export interface ArchiveInterface {
+    title: string;
+    slug: string;
+    image: string;
+}
 
-export default function Archive() {
+const fetchArchiveData = async () => {
+    // const res = await fetch("url");
+    // const arhives = await res.json();
+    return archiveData;
+}
+
+export default async function Archive(): Promise<JSX.Element> {
+    const archiveData = await fetchArchiveData();
     return (
         <section>
             <div className={styles.archives}>
-                {/* There will be for loop for each Project */}
-                {/* Project 1 */}
-                {/* TODO: split to component -> ArchiveItem */}
-                <div className={styles.archive}>
-                    <div className={styles.archiveImageBox}>
-                        <Image className={styles.archiveImage} src="archive/forest_project.svg" alt="forest" width={405}
-                               height={520}/>
-                    </div>
-                    <div className={styles.archiveTitleBox}>
-                        <p className={styles.archiveTitle}>Forest</p>
-                        <HiArrowRight className="arrow" size={30}/>
-                    </div>
-                </div>
-
-                {/* Project 2 */}
-                <div className={styles.archive}>
-                    <div className={styles.archiveImageBox}>
-                        <Image className={styles.archiveImage} src="archive/dark_bear_house_project.svg" alt="forest"
-                               width={405} height={520}/>
-                    </div>
-                    <div className={styles.archiveTitleBox}>
-                        <p className={styles.archiveTitle}>
-                            Dark Bear House
-                        </p>
-                        <HiArrowRight className="arrow" size={30}/>
-                    </div>
-                </div>
-
-                {/* Project 3 */}
-                <div className={styles.archive}>
-                    <div className={styles.archiveImageBox}>
-                        <Image className={styles.archiveImage} src="archive/zebra_project.svg" alt="forest" width={405}
-                               height={520}/>
-                    </div>
-                    <div className={styles.archiveTitleBox}>
-                        <p className={styles.archiveTitle}>
-                            Zebra Project
-                        </p>
-                        <HiArrowRight className="arrow" size={30}/>
-                    </div>
-                </div>
+                {
+                    archiveData.map((archive: ArchiveInterface, idx) => (
+                        <ArchiveItem key={idx} archive={archive}/>
+                    ))
+                }
             </div>
         </section>
     );
