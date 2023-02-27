@@ -1,8 +1,10 @@
-import Header from "@/components/Header/Header";
+import React from "react";
 import './globals.css';
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 import { Oxanium } from '@next/font/google';
 import localFont from '@next/font/local';
-import Footer from "@/components/Footer/Footer";
+
 
 // If loading a variable font, you don't need to specify the font weight
 const font = Oxanium({

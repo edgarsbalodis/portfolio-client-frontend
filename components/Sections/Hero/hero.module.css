@@ -69,10 +69,17 @@
     padding-bottom: 10rem;
 }
 
+/*TODO: fix this*/
 .descriptionBlock__text {
     text-align: center;
     margin-bottom: -20%;
     z-index: 1;
+    font-size: 12.8rem;
+    font-family: var(--font-sequel-sans);
+    color: var(--primary-heading-color);
+    line-height: 10rem;
+    text-transform: uppercase;
+    color: var(--white-color);
 }
 
 .artBlock {
@@ -90,4 +97,8 @@
     border-radius: 50%;
     border: 1px solid var(--primary-accent-color);
     z-index: 1;
+}
+
+.artBlock__image {
+    transition: all 0.3s;
 }

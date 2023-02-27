@@ -1,39 +1,42 @@
-.archives {
+.archivesBlock {
     display: grid;
 }
 
-.archives > :nth-child(odd) {
+.archivesBlock > :nth-child(odd) {
     justify-self: right;
     margin: 0;
     padding: 0;
 }
 
-.archives > :nth-child(even) {
+.archivesBlock > :nth-child(even) {
     justify-self: left;
     margin-top: -15rem;
 }
 
-.archiveImageBox {
+.archiveBlock {
+
+}
+
+.imageBlock {
     border: 3rem solid #C3FF93;
     border-radius: 2.2rem;
     background: #c3ff93;
 }
 
-.archiveImage {
+.imageBlock__image {
     border-radius: 2.2rem;
 }
 
-.archiveTitleBox {
+.titleBlock {
     display: flex;
     align-items: center;
 }
 
-.archiveTitle {
+.titleBlock__title {
     font-style: normal;
     font-weight: 400;
     font-size: 3.2rem;
-    color: #ffffff;
-
+    color: var(--primary-heading-color);
     margin-left: 3rem;
     padding-top: 1rem;
 }
