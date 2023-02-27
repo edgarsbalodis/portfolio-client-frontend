@@ -1,115 +1,125 @@
-.blogPosts {
+.postsBlock {
     display: grid;
     gap: 20rem;
 }
 
-.blogPosts > :nth-child(odd) {
+.postsBlock > :nth-child(odd) {
     justify-self: right;
     margin: 0;
     padding: 0;
 }
 
-.blogPosts > :nth-child(odd) .blogPostInformationBox {
-    left: 20rem;
-    top: -7.5rem;
-}
-
-.blogPosts > :nth-child(even) {
+.postsBlock > :nth-child(even) {
     justify-self: left;
     margin: 0;
     padding: 0;
 }
 
-.blogPosts > :nth-child(even) .blogPostInformationBox {
+/*.postsBlock > .postBlock:nth-child(odd) .postInformationBlock {*/
+/*.postsBlock > .postBlock:nth-child(odd) > .postInformationBlock {*/
+.postsBlock :global .postBlock:nth-child(odd) > .postInformationBlock {
+    left: 20rem;
+    top: -7.5rem;
+}
+
+/*.postsBlock > :nth-child(even) .postInformationBlock {*/
+.postsBlock > :nth-child(even) .postBlock > .postInformationBlock {
     right: 20rem;
     top: -7.5rem;
 }
 
-.blogPost {
-    display: inline-flex;
-    position: relative;
-}
+/*.postBlock {*/
+/*    display: inline-flex;*/
+/*    position: relative;*/
+/*}*/
 
-.blogPostImage {
-    border-radius: 2.2rem;
-}
+/*.imageBlock {}*/
 
-.blogPostInformationBox {
-    display: grid;
-    padding: 2rem;
-    /*flex-direction: column;*/
-    /*justify-content: space-between;*/
-    position: absolute;
-    width: 460px;
-    height: 660px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid #BABABA;
-    backdrop-filter: blur(10px);
+/*.imageBlock__image {*/
+/*    border-radius: 2.2rem;*/
+/*}*/
 
-    /* Note: backdrop-filter has minimal browser support */
-    border-radius: 2.2rem;
-}
+/*.postInformationBlock {*/
+/*    display: grid;*/
+/*    padding: 2rem;*/
+/*    !*flex-direction: column;*!*/
+/*    !*justify-content: space-between;*!*/
+/*    position: absolute;*/
+/*    width: 460px;*/
+/*    height: 660px;*/
+/*    background: rgba(255, 255, 255, 0.2);*/
+/*    border: 1px solid #BABABA;*/
+/*    backdrop-filter: blur(10px);*/
 
-.blogPostTitleBox {
-    align-self: end;
-    border-top: 1px solid #ffffff;
-}
+/*    !* Note: backdrop-filter has minimal browser support *!*/
+/*    border-radius: 2.2rem;*/
+/*}*/
 
-.blogPostTitle {
-    padding-top: 2rem;
-    font-weight: 400;
-    font-size: 2.4rem;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
+/*.titleBlock {*/
+/*    align-self: end;*/
+/*    border-top: 1px solid #ffffff;*/
+/*}*/
 
-.blogPostInformation {
-    display: flex;
-    align-self: end;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 2rem;
-}
+/*.titleBlock__title {*/
+/*    padding-top: 2rem;*/
+/*    font-weight: 400;*/
+/*    font-size: 2.4rem;*/
+/*    color: #ffffff;*/
+/*    letter-spacing: 1px;*/
+/*}*/
 
-.blogPostCategory {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+/*.informationBlock {*/
+/*    display: flex;*/
+/*    align-self: end;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding-right: 2rem;*/
+/*}*/
 
-    /* identical to box height, or 148% */
-    letter-spacing: 0.437238px;
+/*.informationBlock__category {*/
+/*    font-weight: 500;*/
+/*    font-size: 16px;*/
+/*    line-height: 24px;*/
 
-    color: #C3FF93;
-}
+/*    !* identical to box height, or 148% *!*/
+/*    letter-spacing: 0.437238px;*/
 
-.blogPostDates {
-    display: flex;
-    align-items: center;
-}
+/*    color: #C3FF93;*/
+/*}*/
 
-.blogPostDate {
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 10px;
+/*.dateBlock {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
-    /* or 100% */
-    letter-spacing: 0.437238px;
+/*.dateBlock__date {*/
+/*    font-weight: 500;*/
+/*    font-size: 10px;*/
+/*    line-height: 10px;*/
 
-    color: #929292;
-}
+/*    !* or 100% *!*/
+/*    letter-spacing: 0.437238px;*/
 
-.blogPostViews {
-    display: flex;
-    align-items: center;
-}
+/*    color: #929292;*/
+/*}*/
 
-.blogPostViewsNumber {
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 10px;
+/*.viewBlock {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
-    /* or 100% */
-    letter-spacing: 0.437238px;
+/*.viewBlock__count {*/
+/*    font-weight: 500;*/
+/*    font-size: 10px;*/
+/*    line-height: 10px;*/
 
-    color: #929292;
+/*    !* or 100% *!*/
+/*    letter-spacing: 0.437238px;*/
+
+/*    color: #929292;*/
+/*}*/
+
+.postsBlock__animation {
+    animation: 10s infinite alternate slidein;
+    transform: translateX(500px);
 }

@@ -2,7 +2,7 @@ import styles from './archiveSection.module.css';
 import Archive from "@/components/Archive/Archive";
 import HeadingText from "@/components/Heading/HeadingText";
 
-export default function ArchiveSection() {
+const ArchiveSection = (): JSX.Element => {
     return (
         <section className={styles.archiveSection}>
             <HeadingText
@@ -12,7 +12,9 @@ export default function ArchiveSection() {
             >
                 See the<br/>archives
             </HeadingText>
+            {/*@ts-expect-error Server Component*/}
             <Archive/>
         </section>
     );
 }
+export default ArchiveSection;

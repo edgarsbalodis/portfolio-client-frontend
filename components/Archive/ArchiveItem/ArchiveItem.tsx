@@ -1,24 +1,28 @@
+import React from "react";
 import styles from "@/components/Archive/archive.module.css";
 import Image from "next/image";
 import {HiArrowRight} from "react-icons/hi";
-import { ArchiveInterface } from "@/components/Archive/Archive";
 
-interface Props {
-    archive: ArchiveInterface;
+interface ArchiveItemProps {
+    title: string;
+    slug: string;
+    image: string;
 }
-export default function ArchiveItem({archive}: Props ) {
+
+const ArchiveItem: React.FC<ArchiveItemProps> = ({title, slug, image}) => {
     return (
         <>
-            <div className={styles.archive}>
-                <div className={styles.archiveImageBox}>
-                    <Image className={styles.archiveImage} src={archive.image} alt="forest" width={405}
+            <div className={styles.archiveBlock}>
+                <div className={styles.imageBlock}>
+                    <Image className={styles.imageBlock__image} src={image} alt="forest" width={405}
                            height={520}/>
                 </div>
-                <div className={styles.archiveTitleBox}>
-                    <p className={styles.archiveTitle}>{archive.title}</p>
+                <div className={styles.titleBlock}>
+                    <p className={styles.titleBlock__title}>{title}</p>
                     <HiArrowRight className="arrow" size={30}/>
                 </div>
             </div>
         </>
     );
 }
+export default ArchiveItem;

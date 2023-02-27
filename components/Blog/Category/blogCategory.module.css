@@ -1,17 +1,17 @@
-.categories {
+.categoryBlock {
     position: absolute;
     width: 30%;
 }
 
-.categoryList {
+.categoryBlock__list {
     list-style: none;
 }
 
-.categoryList li:nth-child(1) {
+.categoryBlock__list li:nth-child(1) {
     border-top: 1px solid #262626;
 }
 
-.category {
+.categoryBlock__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +27,6 @@
     padding: 3rem 0;
 }
 
-.category > .arrow {
+.categoryBlock__item > .arrow {
     margin-left: 2rem;
 }

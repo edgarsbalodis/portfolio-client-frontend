@@ -6,7 +6,6 @@ import ArtBlock from "@/components/Sections/Hero/ArtBlock/ArtBlock";
 export default function Hero() {
     return (
         <section className={styles.sectionHero}>
-
             <div className={styles.heroBlock}>
                 <div className={styles.animationBlock}>
                     <Image className={styles.animationBlock__image} src="/bubbles.svg" width={645} height={804}
@@ -27,11 +26,8 @@ export default function Hero() {
                     </HeadingText>
                 </div>
             </div>
-
             <div className={styles.abstractBlock}/>
-
-            <ArtBlock />
-
+            <ArtBlock/>
         </section>
     )
 }

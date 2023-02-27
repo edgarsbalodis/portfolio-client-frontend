@@ -4,13 +4,14 @@
     box-sizing: border-box;
 }
 
-:root {
+:root, html[data-theme='dark'] {
     --font-sequel-sans: 'Sequel Sans', sans-serif;
 
     --background-color: #000000;
     --primary-heading-color: #ffffff;
     --secondary-color: #121212;
     --tertiary-color: #313131;
+    --quaternary-color: #929292;
 
     --white-color: #ffffff;
 
@@ -19,16 +20,29 @@
 
     /* Color code for button */
     --primary-button-color: #F5F5F5;
+    /*
+    border
+    1px solid #C3FF93
+    text
+    #F5F5F5
+    background
+    black
+    */
+    --blog-background-color: #121212;
 
-    --hero-background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%), url('../public/lines-white.svg')
+
+    --hero-background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%), url('../public/lines-white.svg');
 }
 
 html[data-theme='light'] {
-    --background-color: #ABABAB ;
+    --background-color: #ABABAB;
     --primary-heading-color: #131313;
+    --secondary-color: #404040;
+
+    --blog-background-color: #C8C8C8;
 
     --primary-button-color: #131313;
-
+    --hero-background: url('../public/lines-black.svg');
 }
 
 /*html.white-mode {*/
@@ -44,7 +58,7 @@ html {
     overflow-x: hidden;
     /* Does NOT work on Safari */
     /* scroll-behavior: smooth; */
-    background: #000000;
+    background: var(--background-color);
     /*cursor: none;*/
 }
 
@@ -72,13 +86,13 @@ body {
 }
 
 .primaryButton {
-    border: 2px solid #c3ff93;
+    border: 2px solid var(--primary-accent-color);
     border-radius: 4rem;
     text-align: center;
     color: var(--primary-button-color);
     padding: 0.5rem 2.0rem;
     font-size: 1.6rem;
-    background-color: black;
+    background-color: var(--background-color);
 }
 
 .mr-1 {
@@ -98,36 +112,36 @@ body {
 .arrow {
     cursor: pointer;
     transform: rotate(-45deg);
-    color: #C3FF93;
+    color: var(--primary-accent-color);
 }
 
 .arrowBtnPrimary {
     cursor: pointer;
     transform: rotate(-45deg);
-    border: 1px solid #C3FF93;
+    border: 1px solid var(--primary-accent-color);
     border-radius: 50%;
     padding: 0.5rem;
     margin-left: 2rem;
-    color: #C3FF93;
+    color: var(--primary-accent-color);
 }
 
 .arrowBtnPrimary:hover {
     color: #000000;
-    background: #C3FF93;
+    background: var(--primary-accent-color);
 }
 
 .arrowBtnSecondary {
     cursor: pointer;
-    border: 1px solid #C3FF93;
+    border: 1px solid var(--primary-accent-color);
     border-radius: 50%;
     padding: 0.5rem;
     margin-left: 2rem;
-    color: #C3FF93;
+    color: var(--primary-accent-color);
 }
 
 .arrowBtnSecondary:hover {
     color: #000000;
-    background: #C3FF93;
+    background: var(--primary-accent-color);
 }
 
 /*.customCursor {*/

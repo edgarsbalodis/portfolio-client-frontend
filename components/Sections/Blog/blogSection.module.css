@@ -1,11 +1,11 @@
-.blogSection {
+.blogBlock {
     margin: 20rem 10rem 20rem 10rem;
 }
 
-.blogText {
+.blogBlock__text {
     padding-bottom: 8rem;
 }
 
-.blogTop {
+.blogBlock__section {
     position: relative;
 }

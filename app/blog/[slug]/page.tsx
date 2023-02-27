@@ -1,53 +1,75 @@
 import styles from './blogPost.module.css';
-import '../../globals.css';
 import {HiArrowLeft} from "react-icons/hi";
 import Link from "next/link";
-import Image from "next/image";
 import {GoCalendar, GoEye} from "react-icons/go";
+import BlogPostItem, {Position} from "@/components/Blog/Posts/PostItem/BlogPostItem";
+import {blogsData} from "@/datas/blogs";
 
-export default function BlogPostPage({params}: {
-    params: { slug: string };
-}) {
+interface PostDataInterface {
+    title: string;
+    slug: string;
+    image: string;
+    category: string;
+    date: string;
+    viewCount: number;
+}
+
+const postData = async (slug: string): Promise<PostDataInterface> => {
+    // TODO: refactor if in request is error return error page
+    const data = blogsData.find((post) => post.slug === slug);
+    if (!data) {
+        return {
+            title: '',
+            slug: '',
+            image: '',
+            category: '',
+            date: '',
+            viewCount: 0,
+        };
+    }
+    // in future there will be a request to the server to get the post data
+    // const res = await fetch(`https://.../${slug}`);
+    // return post data
+    return data;
+}
+
+interface BlogPostPageProps {
+    params: {
+        slug: string;
+    }
+}
+
+const BlogPostPage = async ({params}: BlogPostPageProps): Promise<JSX.Element> => {
+    const {title, slug, viewCount, category, image, date} = await postData(params.slug);
+
     return (
         <section className={styles.postSection}>
             <div className={styles.postTitle}>
                 <Link href="/blog">
                     <HiArrowLeft className={`${styles.postBackIcon} arrowBtnSecondary`} size={55}/>
                 </Link>
-                <h1 className={`headingPrimary`}>Title1</h1>
+                <h1 className={styles.postTitle__title}>{title}</h1>
             </div>
 
             <div className={styles.postContent}>
                 <div className={styles.postDetails}>
-                    <p className={`${styles.blogPostCategory} mr-3`}>Recording</p>
+                    <p className={`${styles.blogPostCategory} mr-3`}>{category}</p>
                     {/*  Date  */}
                     <div className={`${styles.blogPostDates} mr-3`}>
                         <GoCalendar className="mr-1" size={16}/>
-                        <p className={styles.blogPostDate}>17/02/2023</p>
+                        <p className={styles.blogPostDate}>{date}</p>
                     </div>
                     {/*  Views  */}
                     <div className={styles.blogPostViews}>
                         <GoEye className="mr-1" size={16}/>
-                        <p className={styles.blogPostViewsNumber}>1000</p>
+                        <p className={styles.blogPostViewsNumber}>{viewCount}</p>
                     </div>
                 </div>
-
 
                 {/* TODO: create this as a component */}
-                {/*  POST  */}
                 <div className={styles.blogPost}>
-                    <div className={styles.blogPostImageBox}>
-                        <Image className={styles.blogPostImage} src="/blog/vibrant-neon-colorful-liquid 1.svg"
-                               alt="forest" width={700} height={500}/>
-                    </div>
-                    <div className={styles.blogPostInformationBox}>
-                        <div className={styles.blogPostTitleBox}>
-                            <p className={styles.blogPostTitle}>How to produce High-Quality programming
-                                Screencasts</p>
-                        </div>
-                    </div>
+                    <BlogPostItem title={title} slug={slug} image={image} position={Position.CENTER}/>
                 </div>
-                {/*  POST END */}
 
                 <div>
                     <p>
@@ -80,3 +102,4 @@ export default function BlogPostPage({params}: {
         </section>
     );
 }
+export default BlogPostPage;

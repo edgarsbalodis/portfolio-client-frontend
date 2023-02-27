@@ -90,3 +90,8 @@
 .linkListBlock__link:active {
     color: var(--primary-accent-color);
 }
+
+.themeButton {
+    all: unset;
+    cursor: pointer;
+}

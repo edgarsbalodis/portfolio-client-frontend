@@ -1,92 +1,58 @@
+'use client';
+import React from "react";
 import styles from "./blogPosts.module.css";
-import Image from "next/image";
-import {GoCalendar, GoEye} from "react-icons/go";
+import {blogsData} from "@/datas/blogs";
+import BlogPostItem, {Position} from "@/components/Blog/Posts/PostItem/BlogPostItem";
 
-export default function BlogPosts() {
+interface BlogPostsProps {
+    category: string;
+}
+
+const fetchBlogs = async (category: string) => {
+    try {
+        // const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${category}`);
+        // const data = await response.json();
+        return blogsData;
+    } catch (e) {
+        throw new Error('Error while fetching data');
+    }
+}
+
+const BlogPosts = ({category}: BlogPostsProps) => {
+    // const blogs = await fetchBlogs(category);
+    // create intersection observer for even blog posts to add animation on scroll to move from left to right
+    // const postRef = useRef<HTMLDivElement | null>(null);
+
+    // TODO: fix this animation on scroll
+    // useEffect(() => {
+    //     let initialLength = 0;
+    //     const posts = document.querySelector(`.${styles.postsBlock} > *:nth-child(even)`);
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 console.log('entry', entry.target);
+    //                 (entry.target as HTMLElement).style.transition = 'transform 1.5s ease-in-out';
+    //                 (entry.target as HTMLElement).style.transform = `translateX(${initialLength}px)`;
+    //                 initialLength += 30;
+    //             }
+    //         });
+    //     }, {
+    //         threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+    //         rootMargin: "100px"
+    //     });
+    //
+    //     observer.observe(posts as Element);
+    //     return () => observer.disconnect();
+    // });
+
     return (
-        <div className={styles.blogPosts}>
-            {/* loop for each blogPost */}
-            {/* probably will need pagination */}
-
-            {/* Post 1 */}
-            <div className={styles.blogPost}>
-                <div className={styles.blogPostImageBox}>
-                    <Image className={styles.blogPostImage} src="blog/vibrant-neon-colorful-liquid 1.svg"
-                           alt="forest" width={700} height={500}/>
-                </div>
-                <div className={styles.blogPostInformationBox}>
-                    <div className={styles.blogPostTitleBox}>
-                        <p className={styles.blogPostTitle}>How to produce High-Quality programming
-                            Screencasts</p>
-                    </div>
-                    <div className={styles.blogPostInformation}>
-                        <p className={styles.blogPostCategory}>Recording</p>
-                        <div className={styles.blogPostDates}>
-                            <GoCalendar className="mr-1" size={16}/>
-                            <p className={styles.blogPostDate}>17/02/2023</p>
-                        </div>
-                        <div className={styles.blogPostViews}>
-                            <GoEye className="mr-1" size={16}/>
-                            <p className={styles.blogPostViewsNumber}>1000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* Post 1 ENDS --- */}
-
-            {/* Post 2 */}
-            <div className={styles.blogPost}>
-                <div className={styles.blogPostImageBox}>
-                    <Image className={styles.blogPostImage}
-                           src="blog/transparent-colorful-oil-drops-closeup-abstract-background-neural-network-generated-art 1.svg"
-                           alt="art" width={700} height={500}/>
-                </div>
-                <div className={styles.blogPostInformationBox}>
-                    <div className={styles.blogPostTitleBox}>
-                        <p className={styles.blogPostTitle}>How to produce High-Quality programming
-                            Screencasts</p>
-                    </div>
-                    <div className={styles.blogPostInformation}>
-                        <p className={styles.blogPostCategory}>Coding</p>
-                        <div className={styles.blogPostDates}>
-                            <GoCalendar className="mr-1" size={16}/>
-                            <p className={styles.blogPostDate}>17/02/2023</p>
-                        </div>
-                        <div className={styles.blogPostViews}>
-                            <GoEye className="mr-1" size={16}/>
-                            <p className={styles.blogPostViewsNumber}>10 000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* Post 2 ENDS --- */}
-
-            {/* Post 3 */}
-            <div className={styles.blogPost}>
-                <div className={styles.blogPostImageBox}>
-                    <Image className={styles.blogPostImage}
-                           src="blog/closeup-greyscale-shot-building-with-curvy-twists-berlin-germany 1.svg"
-                           alt="forest" width={700} height={500}/>
-                </div>
-                <div className={styles.blogPostInformationBox}>
-                    <div className={styles.blogPostTitleBox}>
-                        <p className={styles.blogPostTitle}>How to produce High-Quality programming
-                            Screencasts</p>
-                    </div>
-                    <div className={styles.blogPostInformation}>
-                        <p className={styles.blogPostCategory}>Productivity</p>
-                        <div className={styles.blogPostDates}>
-                            <GoCalendar className="mr-1" size={16}/>
-                            <p className={styles.blogPostDate}>17/02/2023</p>
-                        </div>
-                        <div className={styles.blogPostViews}>
-                            <GoEye className="mr-1" size={16}/>
-                            <p className={styles.blogPostViewsNumber}>2000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* Post 3 ENDS --- */}
+        <div className={styles.postsBlock}>
+            {blogsData.map(({title, slug, date, viewCount, category, image}, idx) => (
+                <BlogPostItem title={title} slug={slug} image={image} category={category} date={date}
+                              viewCount={viewCount} key={idx} position={idx % 2 === 0 ? Position.LEFT : Position.RIGHT}/>
+            ))}
         </div>
     );
 }
+
+export default BlogPosts;
