@@ -5,7 +5,7 @@ const nextConfig = {
   },
   images: {
     // example for image
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 's3.console.aws.amazon.com', 'portfolio-project-assets.s3.eu-central-1.amazonaws.com'],
   }
 }
 
