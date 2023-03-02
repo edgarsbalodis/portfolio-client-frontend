@@ -14,13 +14,13 @@ const Archive = async (): Promise<JSX.Element> => {
     const archiveData = await fetchArchiveData();
 
     return (
-        <section>
+        <>
             <div className={styles.archivesBlock}>
                 {archiveData.map((archive, idx) => (
                     <ArchiveItem key={idx} title={archive.title} slug={archive.slug} image={archive.image}/>
                 ))}
             </div>
-        </section>
+        </>
     );
 }
 

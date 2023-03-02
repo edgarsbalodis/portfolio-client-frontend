@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Oxanium } from '@next/font/google';
 import localFont from '@next/font/local';
+import ScrollUpBtn from "@/components/Buttons/Scroll/ScrollUpBtn";
 
 
 // If loading a variable font, you don't need to specify the font weight
@@ -38,6 +39,8 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             {/*<div className="customCursor"></div>*/}
             <Header />
             {children}
+            <ScrollUpBtn />
+            <div className="scrollBtn" />
             <Footer />
         </body>
         </html>

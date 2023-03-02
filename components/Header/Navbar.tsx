@@ -24,6 +24,8 @@ const toggleTheme = (mode: string) => {
     }
 }
 
+
+
 export default function Navbar() {
     return (
         <nav className={styles.navigationBlock}>

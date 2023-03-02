@@ -20,7 +20,7 @@ export default function Hero() {
                 <div className={styles.textBlock}>
                     <HeadingText
                         variant={'h1'}
-                        styleVariant={'headingPrimary'}
+                        styleVariant={'headingPrimary__description'}
                     >
                         I love to create <br/>something<br/>simple and<br/>clear
                     </HeadingText>
