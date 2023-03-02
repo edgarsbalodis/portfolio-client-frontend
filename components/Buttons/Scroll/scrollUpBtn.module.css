@@ -1,0 +1,18 @@
+.scrollBtnBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    cursor: pointer;
+    right: 10rem; bottom: 5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary-accent-color);
+    padding: 5px;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.scrollBtnBlock__icon {
+    color: #000000;
+}

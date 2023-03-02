@@ -78,6 +78,14 @@ body {
     text-transform: uppercase;
 }
 
+.headingPrimary__description {
+    font-size: 12.8rem;
+    line-height: 12rem;
+    font-family: var(--font-sequel-sans);
+    color: var(--primary-heading-color);
+    font-weight: 400;
+}
+
 .container {
     /* 1140px */
     /*max-width: 120rem;*/

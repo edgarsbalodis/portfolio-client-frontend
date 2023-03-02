@@ -4,7 +4,7 @@ import HeadingText from "@/components/Heading/HeadingText";
 
 const ArchiveSection = (): JSX.Element => {
     return (
-        <section className={styles.archiveSection}>
+        <section className={styles.archiveSection} id="work">
             <HeadingText
                 variant={"h1"}
                 styleVariant={"headingPrimary"}

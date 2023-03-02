@@ -39,25 +39,11 @@ export default function ArtBlock() {
     return (
         <div ref={sectionRef}>
             <div className={styles.descriptionBlock}>
-                {
-                    /*
-                     TODO: create custom headingPrimary class
-                     - just need to update component to pass css variables if it possible
-                     - or just create custom class
-                     - because light and dark modes will have the same white color
-                     - so it won't be headingPrimary anymore
-                    */
-                }
-                {/*<h1 className={`${styles.descriptionBlock__text} headingPrimary`}>Build and develop<br/>*/}
-                <h1 className={styles.descriptionBlock__text}>Build and develop<br/>
+                <h1 className={styles.descriptionBlock__text}>
+                    Build and develop<br/>
                     projects from concept<br/>
                     until the publish
                 </h1>
-                {/*<div className={styles.artBlock}>*/}
-                {/*    <div className={styles.artBlock__circle}/>*/}
-                {/*    <Image className={styles.artBlock__image} src="/black_flower.svg" width={1250} height={1250}*/}
-                {/*           alt="flower"/>*/}
-                {/*</div>*/}
                 <div className={styles.artBlock}>
                     <div className={styles.artBlock__circle}/>
                     <Image className={styles.artBlock__image} id="image"

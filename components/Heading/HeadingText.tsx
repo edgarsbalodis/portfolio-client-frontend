@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 interface HeadingTextProps extends React.ButtonHTMLAttributes<HTMLHeadingElement> {
     variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-    styleVariant?: "headingPrimary" | "headingSecondary";
+    styleVariant?: "headingPrimary" | "headingSecondary" | "headingPrimary__description";
     className?: string;
     children?: any;
 }
