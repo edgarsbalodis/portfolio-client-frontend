@@ -1,0 +1,41 @@
+.contactBlock {
+    display: flex;
+    margin: 18rem 10rem 10rem 10rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactBlock__heading {
+    font-weight: 500;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+    color: var(--primary-accent-color);
+    margin-bottom: 8rem;
+}
+
+.socialMediaBlock {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.socialMediaBlock__title {
+    /*text-align: center;*/
+    font-size: 3.2rem;
+    color: var(--white-color);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.socialMediaBlock__list {
+    list-style: none;
+}
+.socialMediaBlock__list li {
+    display: inline;
+    margin-left: 2rem;
+}
+
+.socialMediaBlock__icon {
+    color: var(--primary-accent-color);
+}

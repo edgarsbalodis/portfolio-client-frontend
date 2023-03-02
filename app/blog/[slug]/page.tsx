@@ -4,6 +4,7 @@ import Link from "next/link";
 import {GoCalendar, GoEye} from "react-icons/go";
 import BlogPostItem, {Position} from "@/components/Blog/Posts/PostItem/BlogPostItem";
 import {blogsData} from "@/datas/blogs";
+import Contacts from "@/components/Contacts/Contacts";
 
 interface PostDataInterface {
     title: string;
@@ -71,6 +72,8 @@ const BlogPostPage = async ({params}: BlogPostPageProps): Promise<JSX.Element> =
                     <BlogPostItem title={title} slug={slug} image={image} position={Position.CENTER}/>
                 </div>
 
+                {/* TODO: provide html with blog content */}
+                {/* TODO: style everything under this div based on provided html and it's structure */}
                 <div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac justo interdum magna
@@ -98,7 +101,7 @@ const BlogPostPage = async ({params}: BlogPostPageProps): Promise<JSX.Element> =
                     </p>
                 </div>
             </div>
-
+            <Contacts/>
         </section>
     );
 }
