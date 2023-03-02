@@ -38,7 +38,10 @@ const ContactForm = () => {
                 />
                 <button className={styles.contactForm__button} form="contact-form" type="submit">Send Message</button>
             </form>
-            {/* TODO: insert captcha or other, like that cloudflare i'm human */}
+            {/* TODO:
+                - insert captcha or other verification
+                - like that cloudflare - i'm human
+            */}
         </div>
     );
 }
