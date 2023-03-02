@@ -40,7 +40,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             <Header />
             {children}
             <ScrollUpBtn />
-            <div className="scrollBtn" />
             <Footer />
         </body>
         </html>
