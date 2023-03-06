@@ -12,8 +12,8 @@ export default function Header() {
             <div className={styles.logoBlock}>
                 <Image className={styles.logoBlock__logo} src={logoImage} alt="Pigeon Logo" width={35} height={35}/>
                 <Link className={styles.logoBlock__text}
-                      href={routes.find(({name}) => name === "Home")!.path}><span
-                    className={styles.logoBlock__firstName}>Edgars</span> Balodis</Link>
+                    href={routes.find(({name}) => name === "Home")!.path}>
+                    <span className={styles.logoBlock__firstName}>Edgars</span> Balodis</Link>
             </div>
             <Navbar/>
         </header>

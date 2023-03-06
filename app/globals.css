@@ -3,23 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-:root, html[data-theme='dark'] {
+:root {
     --font-sequel-sans: 'Sequel Sans', sans-serif;
+
+    --primary-accent-color: #C3FF93;
+    --tertiary-color: #313131;
+    --quaternary-color: #929292;
+    --white-color: #ffffff;
+    --primary-button-color: #F5F5F5;
+}
+
+html[data-theme='dark'] {
 
     --background-color: #000000;
     --primary-heading-color: #ffffff;
     --secondary-color: #121212;
-    --tertiary-color: #313131;
-    --quaternary-color: #929292;
+    /*--tertiary-color: #313131;*/
+    /*--quaternary-color: #929292;*/
 
-    --white-color: #ffffff;
-
+    /*--white-color: #ffffff;*/
     /* green accent color */
-    --primary-accent-color: #C3FF93;
+    /*--primary-accent-color: #C3FF93;*/
 
     /* Color code for button */
-    --primary-button-color: #F5F5F5;
+    /*--primary-button-color: #F5F5F5;*/
     /*
     border
     1px solid #C3FF93
