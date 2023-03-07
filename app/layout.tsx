@@ -6,7 +6,6 @@ import { Oxanium } from '@next/font/google';
 import localFont from '@next/font/local';
 import ScrollUpBtn from "@/components/Buttons/Scroll/ScrollUpBtn";
 
-
 // If loading a variable font, you don't need to specify the font weight
 const font = Oxanium({
     weight: '400',
@@ -34,7 +33,9 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-        <head />
+        <head >
+            <title>Edgars Balodis Portfolio</title>
+        </head>
         <body>
             {/*<div className="customCursor"></div>*/}
             <Header />
