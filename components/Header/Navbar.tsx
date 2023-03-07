@@ -51,6 +51,7 @@ export default function Navbar() {
     // need to get theme from local storage
     // if there is no theme in local storage, get theme from user's system
     // if there is no theme in user's system, use dark theme
+    // TODO: fix this logic, so there is only logic for changing theme not for getting theme
     const defaultTheme: ThemeModeEnum = (localStorage.getItem('theme') as ThemeModeEnum) ? localStorage.getItem('theme') as ThemeModeEnum : window.matchMedia("(prefers-color-scheme: light)").matches ? ThemeModeEnum.LIGHT : ThemeModeEnum.DARK;
 
     useEffect(() => {
